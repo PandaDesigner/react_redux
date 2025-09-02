@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import countReducer from '../reducers/contador-reducer';
+import pokemonReducer from '../../feature/pokemon/actions/pokemon.slice';
+import counterReducer from '../../feature/counter/actions/counter.slice';
 
 export const makeStore = () => {
     return configureStore({
         reducer: {
-            count: countReducer
+            pokemon: pokemonReducer,
+            counter: counterReducer,
         }
     });
 };

@@ -1,9 +1,9 @@
-import CounterComponent from '@/feature/count/counter.components';
+import { Counter } from '@/feature/counter/counter';
 
-export default function Counter() {
+export default function CounterPage() {
     return (
         <div>
-            <CounterComponent />
+            <Counter />
         </div>
     )
 }
