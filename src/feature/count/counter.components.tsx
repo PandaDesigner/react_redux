@@ -2,10 +2,13 @@
 
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '@/lib/store/store';
-import { add, remove, reset } from '@/lib/actions/contador-action';
+import { add, remove, reset } from '@/lib/reducers/contador.slice';
 
 export default function CounterComponent() {
-    const count = useSelector((state: RootState) => state.count);
+    //const count = useSelector((state: RootState) => state.count);
+
+    const states = useSelector((state: RootState) => state.count.count);
+
     const dispatch = useDispatch<AppDispatch>();
 
     const handleIncrement = () => {
@@ -22,7 +25,7 @@ export default function CounterComponent() {
 
     return (
         <div className="flex flex-col items-center gap-4 p-6">
-            <h1 className="text-2xl font-bold">Contador: {count.count}</h1>
+            <h1 className="text-2xl font-bold">Contador: {states}</h1>
             <div className="flex gap-2">
                 <button
                     onClick={handleIncrement}
