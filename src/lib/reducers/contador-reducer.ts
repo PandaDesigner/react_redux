@@ -32,9 +32,10 @@ export default function countReducer(state: State = initialState, action: Unknow
                 count: state.count + (action.payload ?? 1)
             };
         case actionTypes.DECREMENT:
+            const newCount = state.count - (action.payload ?? 1);
             return {
                 ...state,
-                count: state.count - (action.payload ?? 1)
+                count: newCount < 0 ? 0 : newCount
             };
         case actionTypes.RESET:
             return {
